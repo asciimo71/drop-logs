@@ -1,0 +1,17 @@
+<configuration>
+    <appender name="stdout1" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>"%date{yyyy-MM-dd'T'HH:mm:ss.SSSZ, Europe/Berlin}" [%thread] %-5level [%logger{42}:%line] - message: "%msg"%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender ref="CONSOLE" name="STASH" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
+    <root level="${LOGGING_LEVEL:-INFO}">
+        <!--        <appender-ref ref="stdout1"/> -->
+        <appender-ref ref="STASH"/>
+    </root>
+
+</configuration>
