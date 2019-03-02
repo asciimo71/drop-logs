@@ -16,7 +16,7 @@ import java.util.Random;
 @Slf4j
 public class StashLogger {
 
-    private static String[] words = new String[] {
+    private static final String[] words = new String[] {
             "One", "Two", "Three", "Four", "Five", "Six", "Seven"
     };
 
